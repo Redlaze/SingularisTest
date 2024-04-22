@@ -10,10 +10,9 @@ VIOLET = (255, 0, 255)
 WHITE = (255, 255, 255)
 
 
-def start_tracking_detection(video_cap):
+def start_tracking_detection():
     """
     Захват и анализ видео
-    :param video_cap: видеозапись
     """
     while True:
 
@@ -111,13 +110,14 @@ def object_tracking(frame_shot, array_detection):
         cv2.putText(frame_shot, text, (xmin, ymin - 10),
                     font, font_size, WHITE, width, cv2.LINE_AA)
         delta = 40
+        delta_rect = 250
         tracker_list.append([[xmin, ymin],
-                             [xmin, ymin - 40],
-                             [xmin + 250, ymin - 40],
-                             [xmin + 250, ymin],
+                             [xmin, ymin - delta],
+                             [xmin + delta_rect, ymin - delta],
+                             [xmin + delta_rect, ymin],
                              [xmax, ymin],
                              [xmax, ymax],
-                             # [xmin + 250, ymin],
+                             # [xmin + delta_rect, ymin],
                              [xmin, ymax],
 
                              ])
@@ -182,4 +182,4 @@ if __name__ == '__main__':
     # загрузка предварительно обученной модели YOLOv8m
     model = YOLO("Resources/yolov8m.pt")
 
-    start_tracking_detection(video_cap)
+    start_tracking_detection()
