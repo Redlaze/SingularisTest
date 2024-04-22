@@ -127,7 +127,7 @@ def object_tracking(frame_shot, array_detection):
 
 def create_track(tracker_lst, frame):
     """
-    трекинг объектов
+    вырезание объектов и создание маски
     :param tracker_lst: массив координат объектов для маски
     :param frame_shot: кадр видео
     :return: вырезанные объекты из кадра
