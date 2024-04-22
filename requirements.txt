@@ -1,0 +1,5 @@
+ultralytics
+opencv-contrib-python
+deep-sort-realtime
+numpy
+art
