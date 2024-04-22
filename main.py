@@ -167,7 +167,6 @@ if __name__ == '__main__':
     video = input("Введите путь файла (URL): ")
     look_for = input("Метка класса: ").split(',')
     tracker = DeepSort(max_age=5000)
-    # Delete spaces
     list_look_for = []
     for look in look_for:
         list_look_for.append(look.strip())
