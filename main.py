@@ -133,8 +133,8 @@ def create_track(tracker_lst, frame):
     :return: вырезанные объекты из кадра
     """
 
-    contours = [np.array(i) for i in tracker_lst]
     # создание маски
+    contours = [np.array(i) for i in tracker_lst]
     stencil = np.zeros(frame.shape, dtype='uint8')
     for i in tracker_lst:
         stencil[i[0][1]:i[5][1], i[0][0]: max(i[4][0], i[2][0])] = [255, 255, 255]
