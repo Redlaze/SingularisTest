@@ -145,6 +145,13 @@ def create_track(tracker_lst, frame):
 
 
 def increase_brightness(img, value=30):
+    """
+    изменение яркости кадра
+    :param img: кадр видео
+    :param value: уровень яркости в % (по умолчанию 30%)
+    :return: кадр с измененной яркостью
+    """
+    
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     h, s, v = cv2.split(hsv)
 
